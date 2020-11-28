@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Structure
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("V=");
+            double V = double.Parse(Console.ReadLine());
+            Console.Write("alpha=");
+            double alpha = double.Parse(Console.ReadLine());
+            Console.WriteLine("Tmax=" + Tmax(V, alpha));
+            Console.WriteLine("Hmax=" + Hmax(V, alpha));
+            Console.WriteLine("Range=" + Range(V, alpha));
+            Console.ReadKey();
+        }
+        public static double Tmax(double V, double alpha)
+        {
+            return ( ( 2 * V ) * Math.Sin(alpha)) / 9.8;
+        }
+        public static double Hmax(double V, double alpha)
+        {
+            return Math.Pow(V * Math.Sin(alpha), 2) / (2 * 9.8) ;
+        }
+        public static double Range(double V, double alpha)
+        {
+            return ( Math.Pow(V, 2) * Math.Sin(2 * alpha)) / 9.8;
+        }
+    }
+}
